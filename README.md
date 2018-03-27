@@ -1,4 +1,4 @@
-# Black-Dogs
+# Black Dogs
 
 #### personnel
 Shin Bamba, Dylan Mak
