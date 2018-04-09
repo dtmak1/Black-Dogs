@@ -17,13 +17,20 @@ if the explorer is on the treasure, return true
 
 ## English or pseudocode description of algorithm
 for every step of a path
-  base case?
+  
+  base case // if accept...
+  
   if reach an intersection (multiple possible paths)
-    for every possible next step
-      recursive abstraction
-      return to the location of the intersection <-- recursive backtracking 
-    
-final return statement needs to be an 'or' to account for paths with dead ends
+ 
+ for every direction 
+ 
+ recursive abstraction
+ 
+ return to the location of the intersection <-- recursive backtracking 
+      
+// recursive backtracking is accomplished by using copy constructor
+
+return false
 
 ## class(es), with fields and methods
 
