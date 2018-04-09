@@ -8,12 +8,12 @@ returns the boolean value of the statement “there exists one path through a ma
 starting at a designated beginning and ending at treasure”
 
 ## recursive abstraction
-when i am asked to find a path through a maze with n choices,
-the recursive abstraction can find a path through a maze with n-1 choices.
+when i am asked to find a path through a maze from the maze element the explorer is on,
+
+the recursive abstraction can find a path through a maze starting 1 step from the explorer's current position
 
 ## base case
-when you get to the treasure or end
-if treasure return true, if end return false
+if the explorer is on the treasure, return true
 
 ## English or pseudocode description of algorithm
 for every step of a path
