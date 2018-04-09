@@ -17,7 +17,7 @@ if the explorer is on the treasure, return true
 
 ## English or pseudocode description of algorithm
 for every step of a path
-  
+  if (wall) then return 
   base case // if accept...
   
   if reach an intersection (multiple possible paths)
