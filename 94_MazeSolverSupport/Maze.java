@@ -90,17 +90,20 @@ public class Maze {
         // Copy the explorer's position (code by Holmes is asserted to work)
         explorerPosition = new Vector( old.explorerPosition);
 		
-		maze = new int[ MAX_RANKS][];
-		for (int r = 0; r < old.maze.length; r++) {
+		maze = new int[ MAX_RANKS][old.maze[0].length];
+		rankCount = old.rankCount;
+		for (int r = 0; r < rankCount; r++) {
+		    // System.out.println("New Rank");
 			//System.out.println(old.maze[r].length);
 			//maze[r] = new int[3];
-			for (int f = 0; f < maze[r].length; f++) {	
+			for (int f = 0; f < old.maze[r].length; f++) {
+			    // System.out.println(old.maze[r][f]);
 				maze[r][f] = old.maze[r][f];
 			}
 		}
 		
 		rankCount = old.rankCount;
-        System.out.println(maze.toString());
+		// System.out.println(maze.toString());
     }
 
 
