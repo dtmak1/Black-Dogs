@@ -13,28 +13,32 @@ when i am asked to find a path through a maze from the maze element the explorer
 the recursive abstraction can find a path through a maze starting 1 step from the explorer's current position
 
 ## base case
-if the explorer is on the treasure, return true
+when the explorer has reached the treasure
 
 ## English or pseudocode description of algorithm
-for every step of a path
-  if (wall) then return 
-  base case // if accept...
-  
-  if reach an intersection (multiple possible paths)
- 
- for every direction 
- 
- recursive abstraction
- 
- return to the location of the intersection <-- recursive backtracking 
-      
-// recursive backtracking is accomplished by using copy constructor
+procedure bt(c)
 
-return false
+  if the explorer is on a wall return
+
+  if the explorer is on the treasure return true
+  
+  s ← first(P,c)
+  
+  while s ≠ Λ do
+  
+   bt(s) // for every direction
+  
+   s ← next(P,s)
+  
+ return false
+ 
+ <!-- recursive backtracking is accomplished by using copy constructor -->
 
 ## class(es), with fields and methods
+<!-- what should we put here? -->
 
 ## version*n* wish list
+considered focusing on the junctions / choices / hallways
 return path or set of moves to reach treasure
 return number of different possible paths to reach treasure
 return all?
