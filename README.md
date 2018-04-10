@@ -5,7 +5,7 @@ Shin Bamba, Dylan Mak
 
 ## statement of problem
 returns the boolean value of the statement “there exists one path through a maze
-starting at a designated beginning and ending at treasure”
+starting at a designated beginning and ending at treasure” OR "one path from the explorer to the treasure" (which is better?)
 
 ## recursive abstraction
 when i am asked to find a path through a maze from the maze element the explorer is on,
@@ -22,13 +22,15 @@ procedure bt(c)
 
   if the explorer is on the treasure return true
   
-  s ← first(P,c)
+  else 
   
-  while s ≠ Λ do
+  for each direction
   
-   bt(s) // for every direction
+   step 
   
-   s ← next(P,s)
+   bt(s) // recursive abstraction
+  
+   undo step via the snapshot & copy constructor
   
  return false
  
