@@ -22,7 +22,7 @@ procedure bt(c)
 
   if the explorer is on the treasure return true
   
-  else 
+  else {  
   
   for each direction
   
@@ -31,6 +31,8 @@ procedure bt(c)
    bt(s) // recursive abstraction
   
    undo step via the snapshot & copy constructor
+   
+   }
   
  return false
  
