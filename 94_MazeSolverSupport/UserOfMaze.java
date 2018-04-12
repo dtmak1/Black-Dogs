@@ -22,7 +22,7 @@ public class UserOfMaze {
                             );
         System.out.println( maze + System.lineSeparator());
 
-        // moveTest( maze);
+        moveTest( maze);
         // dropTest( maze);
 
         // copyConstructTest( maze);
@@ -31,7 +31,7 @@ public class UserOfMaze {
         // displayer = new Displayer( Integer.parseInt( commandLine[3]));
         // displayerTest( maze);
 
-        snapshotDemo( maze);
+        // snapshotDemo( maze);
     }
 
 
@@ -61,6 +61,8 @@ public class UserOfMaze {
                           + ", leaving explorer on a " + maze.explorerIsOnA()
                           +      System.lineSeparator()
                           + maze + System.lineSeparator());
+		// maze.go(3);
+		// System.out.println("NOT A DIRECTION");
 
         // step out of the maze
         maze.go( Maze.SOUTH);
