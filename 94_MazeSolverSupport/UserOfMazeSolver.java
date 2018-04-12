@@ -3,6 +3,7 @@ Test Maze Solver
 
 TEST CASES:
 java UserOfMazeSolver mazes/4cell_treasureWest.txt -1 -1  # no explorer
+
 java UserOfMazeSolver mazes/intersection_treasureNorth.txt 1 1
 	treasure at starting point-
 java UserOfMazeSolver mazes/treasure_at_start.txt 0 0
@@ -29,7 +30,7 @@ public class UserOfMazeSolver{
 		// test toString
 		System.out.println(mazeSolver);
        
-	   // test base case
+	   // test solver
 	   System.out.println("SOLUTION STARTED");
 		System.out.println(mazeSolver.solve());
 	  
