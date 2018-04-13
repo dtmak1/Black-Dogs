@@ -1,7 +1,6 @@
 public class MazeSolver{
 	
 	Maze candidate;
-	Maze snapshot;
 	
 	/**
 	Create a maze
@@ -14,10 +13,9 @@ public class MazeSolver{
 	Maze Solver
 	*/
 	public boolean solve(){
-		System.out.println("here we go" + System.lineSeparator() + candidate);
-		System.out.println(candidate.explorerIsOnA() == Maze.TREASURE);
-		System.out.println("snapshot below" + System.lineSeparator());
-		System.out.println(snapshot);
+		//System.out.println("here we go" + System.lineSeparator() + candidate);
+		//System.out.println(candidate.explorerIsOnA() == Maze.TREASURE);
+		//System.out.println("snapshot below" + System.lineSeparator());
 		
 		if (candidate.explorerIsOnA() == Maze.WALL){}
 		
@@ -26,7 +24,7 @@ public class MazeSolver{
 		}
 
 		else {		
-			snapshot = new Maze(candidate);
+			Maze snapshot = new Maze(candidate);
 						
 			candidate.dropA(Maze.WALL);
 			candidate.go(Maze.EAST);
@@ -46,6 +44,12 @@ public class MazeSolver{
 			candidate.dropA(Maze.WALL);
 			candidate.go(Maze.SOUTH);
 			if (solve()) return true;
+			
+			else {
+				candidate = new Maze(snapshot);
+				candidate.dropA(Maze.WALL);
+				if (solve()) return true;
+			}			
 			
 		}
 	
