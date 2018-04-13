@@ -8,7 +8,12 @@ public class MazeSolver{
 	public MazeSolver(Maze mazeToSolve){
 		candidate = mazeToSolve;
 	}
-	
+	/**
+	String representation of Maze
+	*/
+	public String toString(){
+		return candidate.toString();
+	}
 	/**
 	Maze Solver
 	*/
