@@ -28,7 +28,9 @@ procedure bt(c)
 ```
 
 ## known bugs
-tbd - to be discovered
+NullPointerException occurs when asked to solve a null maze.
+NumberFormatException occurs when starting position of explorer is unreasonably large or non-integer number
+ArrayIndexOutOfBoundsException when not given proper parameters at command line
 
 ## class(es), with fields and methods
 <!-- what should we put here? -->
