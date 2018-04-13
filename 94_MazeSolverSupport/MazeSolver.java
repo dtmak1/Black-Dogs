@@ -22,7 +22,6 @@ public class MazeSolver{
 		if (candidate.explorerIsOnA() == Maze.WALL){}
 		
 		else if (candidate.explorerIsOnA() == Maze.TREASURE){
-			//System.out.println("DING DING!! PATH FOUND");
 			return true;
 		}
 
@@ -31,22 +30,22 @@ public class MazeSolver{
 						
 			candidate.dropA(Maze.WALL);
 			candidate.go(Maze.EAST);
-			solve();
+			if (solve()) return true;
 			
 			candidate = new Maze(snapshot);
 			candidate.dropA(Maze.WALL);
 			candidate.go(Maze.NORTH);
-			solve();
+			if (solve()) return true;
 			
 			candidate = new Maze(snapshot);
 			candidate.dropA(Maze.WALL);
 			candidate.go(Maze.WEST);
-			solve();
+			if (solve()) return true;
 			
 			candidate = new Maze(snapshot);
 			candidate.dropA(Maze.WALL);
 			candidate.go(Maze.SOUTH);
-			solve();
+			if (solve()) return true;
 			
 		}
 	
