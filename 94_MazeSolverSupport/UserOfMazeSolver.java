@@ -26,11 +26,11 @@ public class UserOfMazeSolver{
         System.out.println( maze + System.lineSeparator());
 		
 		// test constructor
-		MazeSolver mazeSolver = new MazeSolver(maze);
+		MazeSolver mazeSolver = new MazeSolver(maze, Integer.parseInt( commandLine[3]));
 		
 		// // test toString
 		// System.out.println(mazeSolver);
-       
+	   
 		// test solver
 		System.out.println("SOLVER STARTED");
 		System.out.println(mazeSolver.solve());

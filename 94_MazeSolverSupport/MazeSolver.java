@@ -1,12 +1,14 @@
 public class MazeSolver{
 	
 	Maze candidate;
+	Displayer displayer;
 	
 	/**
 	Create a maze
 	*/
-	public MazeSolver(Maze mazeToSolve){
+	public MazeSolver(Maze mazeToSolve, int screenHeight){
 		candidate = mazeToSolve;
+		displayer = new Displayer(screenHeight);
 	}
 	
 	/**
@@ -33,15 +35,17 @@ public class MazeSolver{
 
 		else {		 
 			for (int d = 0; d < Maze.directions.length; d++) {
-				
 				Maze snapshot = new Maze(candidate);
 				
 				candidate.dropA(Maze.WALL);
 				candidate.go(Maze.directions[d]);
 				
+				displayer.atTopOfWindow(candidate.toString()); 
+				
 				if (solve()) return true;
 			
 				candidate = new Maze(snapshot);	
+				displayer.atTopOfWindow(candidate.toString());
 			}			
 			
 		}
