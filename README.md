@@ -4,30 +4,35 @@
 Shin Bamba, Dylan Mak
 
 ## v1
-fix up the readme and implement displayer
+fix up the readme, implement for loop, implement displayer
 
 ## statement of problem
-returns the boolean value of the statement “there exists one path through a maze starting at a designated beginning and ending at treasure”
+returns the boolean value of the statement “there exists a path through the maze starting at a designated beginning and ending at a treasure”
 
 ## recursive abstraction
-when i am asked to find if there “there exists one path through a maze starting at a designated beginning and ending at treasure”,  
-the recursive abstraction can find if there exists one path through the maze starting 1 step from the explorer's current position and ending at treasure
+when i am asked to find if “there exists a path through the maze starting at a designated beginning and ending at a treasure”,  
+the recursive abstraction can find if there exists a path through the maze starting 1 step from the explorer's current position and ending at a treasure
 
 ## base case
-when the explorer is on the treasure
+when the explorer is on a wall  
+when the explorer is on a treasure
 
 ## English or pseudocode description of algorithm
 ```
-procedure bt(c)
+procedure bt() {
   if the explorer is on a wall return
-  if the explorer is on the treasure return true
+  else if the explorer is on a treasure return true
   else {  
-    for each direction
-    step
-    bt(s) // recursive abstraction
-    undo step via the snapshot & copy constructor // backtracking piece
-  }
+	for each direction {
+		take a snapshot
+		drop a wall
+		step
+		if (bt()) return true
+		restore snapshot
+	}
+  }		
   return false
+}
 ```
 
 ## known bugs

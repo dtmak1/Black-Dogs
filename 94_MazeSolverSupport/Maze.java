@@ -29,6 +29,8 @@ public class Maze {
           in the unlikely event that we ever want to add north-west, etc.:
           2+4 --> 6  */
     
+	public final static int[] directions = {EAST, NORTH, WEST, SOUTH };
+		
     private int[][] maze;
     private final static int MAX_RANKS = 64;
     private int rankCount;  // number of ranks in a constructed Maze

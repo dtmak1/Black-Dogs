@@ -18,6 +18,7 @@ public class UserOfMazeSolver{
 		throws java.io.FileNotFoundException {
         System.out.println();
 		
+		// initialize maze
 		Maze maze = new Maze( commandLine[0]
                             , Integer.parseInt( commandLine[1])
                             , Integer.parseInt( commandLine[2])
@@ -27,12 +28,13 @@ public class UserOfMazeSolver{
 		// test constructor
 		MazeSolver mazeSolver = new MazeSolver(maze);
 		
-		// test toString
-		System.out.println(mazeSolver);
+		// // test toString
+		// System.out.println(mazeSolver);
        
-	   // test solver
-	   System.out.println("SOLUTION STARTED");
+		// test solver
+		System.out.println("SOLVER STARTED");
 		System.out.println(mazeSolver.solve());
+		System.out.println("SOLVER FINISHED");
 	  
 	   
     }

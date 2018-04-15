@@ -8,14 +8,17 @@ public class MazeSolver{
 	public MazeSolver(Maze mazeToSolve){
 		candidate = mazeToSolve;
 	}
+	
 	/**
 	String representation of Maze
 	*/
 	public String toString(){
 		return candidate.toString();
 	}
+	
 	/**
-	Maze Solver
+	returns the boolean value of the statement there exists a path through 
+	the maze starting at a designated beginning and ending at a treasure	
 	*/
 	public boolean solve(){
 		//System.out.println("here we go" + System.lineSeparator() + candidate);
@@ -28,32 +31,17 @@ public class MazeSolver{
 			return true;
 		}
 
-		else {		
-			Maze snapshot = new Maze(candidate);
-						
-			candidate.dropA(Maze.WALL);
-			candidate.go(Maze.EAST);
-			if (solve()) return true;
-			
-			candidate = new Maze(snapshot);
-			candidate.dropA(Maze.WALL);
-			candidate.go(Maze.NORTH);
-			if (solve()) return true;
-			
-			candidate = new Maze(snapshot);
-			candidate.dropA(Maze.WALL);
-			candidate.go(Maze.WEST);
-			if (solve()) return true;
-			
-			candidate = new Maze(snapshot);
-			candidate.dropA(Maze.WALL);
-			candidate.go(Maze.SOUTH);
-			if (solve()) return true;
-			
-			else {
-				candidate = new Maze(snapshot);
+		else {		 
+			for (int d = 0; d < Maze.directions.length; d++) {
+				
+				Maze snapshot = new Maze(candidate);
+				
 				candidate.dropA(Maze.WALL);
+				candidate.go(Maze.directions[d]);
+				
 				if (solve()) return true;
+			
+				candidate = new Maze(snapshot);	
 			}			
 			
 		}
